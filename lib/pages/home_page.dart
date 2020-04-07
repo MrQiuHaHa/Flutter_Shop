@@ -40,7 +40,6 @@ class GradeSecond extends StatelessWidget {
 
   Widget _childModule(BuildContext context, Post item) {
     return InkWell(
-      
       onTap: (){print('点击跳转');},
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -64,7 +63,6 @@ class GradeSecond extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: ScreenUtil().setHeight(260),
-      // color: Colors.red,
       padding: EdgeInsets.all(5),
       child: GridView.count(
               physics: const NeverScrollableScrollPhysics(),//禁止滑动
@@ -84,7 +82,17 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
+
+  @override
+  bool get wantKeepAlive => true;
+
+@override
+  void initState() {
+    print("homePage初始化了");
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     // getHttp();
@@ -144,6 +152,7 @@ class _HomePageState extends State<HomePage> {
       debugPrint('error');
     }
   }
+
 }
 
 
