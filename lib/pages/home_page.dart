@@ -65,7 +65,7 @@ class GradeSecond extends StatelessWidget {
     return Container(
       height: ScreenUtil().setHeight(260),
       // color: Colors.red,
-      padding: EdgeInsets.all(8),
+      padding: EdgeInsets.all(5),
       child: GridView.count(
               physics: const NeverScrollableScrollPhysics(),//禁止滑动
               crossAxisCount: 5,
