@@ -45,7 +45,14 @@ class GradeSecond extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Image.network(item.imageUrl,width: ScreenUtil().setWidth(90),fit: BoxFit.cover,),
+          Container(
+            width: ScreenUtil().setWidth(60),
+            height: ScreenUtil().setWidth(60),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(ScreenUtil().setWidth(30)),
+              image: DecorationImage(image:  NetworkImage(item.imageUrl),fit: BoxFit.cover)
+            ),
+          ),
           SizedBox(height: 6,),
           Text(item.author,overflow: TextOverflow.ellipsis),
         ],
@@ -57,7 +64,7 @@ class GradeSecond extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: ScreenUtil().setHeight(260),
-      color: Colors.red,
+      // color: Colors.red,
       padding: EdgeInsets.all(8),
       child: GridView.count(
               physics: const NeverScrollableScrollPhysics(),//禁止滑动
